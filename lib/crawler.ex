@@ -9,6 +9,7 @@ defmodule Crawler do
     children = [
       # Define workers and child supervisors to be supervised
       # worker(Crawler.Worker, [arg1, arg2, arg3]),
+      worker(ConCache, [[], [name: :uri_results]]),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

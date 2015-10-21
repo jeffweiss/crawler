@@ -14,7 +14,7 @@ defmodule Crawler.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger],
+    [applications: [:logger, :inets, :ssl, :con_cache],
      mod: {Crawler, []}]
   end
 
@@ -28,6 +28,8 @@ defmodule Crawler.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [
+      {:con_cache, "~> 0.9"}
+    ]
   end
 end
